@@ -1,4 +1,1 @@
-*
-!*.js
-!package.json
-!yarn.lock
+Dockerfile
