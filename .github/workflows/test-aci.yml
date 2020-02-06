@@ -13,7 +13,7 @@ jobs:
         - name: 'Deploy to ACI using Action'
           uses: mitsha-microsoft/aci-create-action@v1
           with:
-              resource-group: test
+              resource-group: gevergheAzureSaturday
               dns-name-label: action-test-aci
               image: nginx
               name: action-container-try
