@@ -1,0 +1,21 @@
+on: [push, pull_request]
+
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - name: 'Azure Login'
+          uses: azure/login@v1
+          with:
+            creds: ${{ SECRETS.AZURE_CREDENTIALS }}
+            
+        - name: 'Deploy to ACI using Action'
+          uses: mitsha-microsoft/aci-create-action@v1
+          with:
+              resource-group: mitsha-test
+              dns-name-label: action-test-aci
+              image: nginx
+              name: action-container-try
+              location: 'east us'
+              
